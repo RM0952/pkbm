@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | Log in (v2)</title>
+  <title>PKBM | Login</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -20,7 +20,7 @@
   <!-- /.login-logo -->
   <div class="card card-outline card-primary">
     <div class="card-header text-center">
-      <a href="<?php echo base_url() ?>assets/index2.html" class="h1"><b>Admin</b>LTE</a>
+      <a href="<?php echo base_url() ?>assets/index2.html" class="h1"><b>PKBM</b></a>
     </div>
     <div class="card-body">
       <p class="login-box-msg"><?php echo $msg ?></p>

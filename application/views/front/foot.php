@@ -1,17 +1,44 @@
-<footer class="py-3 my-0 bg-light">
-    <p class="text-center text-muted">&copy; 2022 KPT</p>
-</footer>
+  <section id="grad">
+      <div class="container text-light">
+          <div class="row g-4 justify-content-between align-items-center py-3">
+              <div class="col-md-2">
+                <img class="img-fluid" src="<?php echo base_url().'assets/dist/img/logo-pkbm.png'?>" style="width:176px;">
+              </div>
+              <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-4 col-6 order-3 order-md-2">
+                        <h5 class="mb-4 fw-bold">Tentang</h5>
+                        <h6 class="mb-3"><a href="#sec-tentangkami" class="text-light" style="text-decoration: none;">Kontak Kami</a></h6> 
+                    </div>
+                    
+                    <div class="col-md-8 order-4">
+                        <h5 class="mb-4 fw-bold">Kantor Pusat I</h5>
+                        <p>
+                            Jl. Bumi Sentosa Raya A1/5-8, A1/31-33, A3/3, B1/3 Cibinong, Kab. Bogor, Jawa Barat, Indonesia 16912.
+                            <!-- Jl. Bumi Sentosa Raya Blok A3 No.3, A1 No. 5 - 8, Perum. Bumi Sentosa, Cibinong, Jawa Barat 16912, Indonesia -->
+                        </p>
+                        
+                    </div>
+                </div>
+              </div>
+          </div>
+      </div>
+    </section>
+<section  class="py-3 bg-dark text-light text-center">
+<span>
+    Copyright&copy; Pusat Kegiatan Belajar Masyarakat (PKBM) by Konsultan Pendidikan Tinggi 2022
+</span>
+</section>
+
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
 <script>
-var currentTab = 0; // Current tab is set to be the first tab (0)
-showTab(currentTab); // Display the current tab
+var currentTab = 0;
+showTab(currentTab); 
 
 function showTab(n) {
-  // This function will display the specified tab of the form...
   var x = document.getElementsByClassName("tab");
   x[n].style.display = "block";
-  //... and fix the Previous/Next buttons:
   if (n == 0) {
     document.getElementById("prevBtn").style.display = "none";
   } else {
@@ -22,58 +49,42 @@ function showTab(n) {
   } else {
     document.getElementById("nextBtn").innerHTML = "Next";
   }
-  //... and run a function that will display the correct step indicator:
   fixStepIndicator(n)
 }
 
 function nextPrev(n) {
-  // This function will figure out which tab to display
   var x = document.getElementsByClassName("tab");
-  // Exit the function if any field in the current tab is invalid:
   if (n == 1 && !validateForm()) return false;
-  // Hide the current tab:
   x[currentTab].style.display = "none";
-  // Increase or decrease the current tab by 1:
   currentTab = currentTab + n;
-  // if you have reached the end of the form...
   if (currentTab >= x.length) {
-    // ... the form gets submitted:
     document.getElementById("regForm").submit();
     return false;
   }
-  // Otherwise, display the correct tab:
   showTab(currentTab);
 }
 
 function validateForm() {
-  // This function deals with validation of the form fields
   var x, y, i, valid = true;
   x = document.getElementsByClassName("tab");
   y = x[currentTab].getElementsByTagName("input");
-  // A loop that checks every input field in the current tab:
   for (i = 0; i < y.length; i++) {
-    // If a field is empty...
     if (y[i].value == "") {
-      // add an "invalid" class to the field:
       y[i].className += " invalid";
-      // and set the current valid status to false
       valid = false;
     }
   }
-  // If the valid status is true, mark the step as finished and valid:
   if (valid) {
     document.getElementsByClassName("step")[currentTab].className += " finish";
   }
-  return valid; // return the valid status
+  return valid; 
 }
 
 function fixStepIndicator(n) {
-  // This function removes the "active" class of all steps...
   var i, x = document.getElementsByClassName("step");
   for (i = 0; i < x.length; i++) {
     x[i].className = x[i].className.replace(" active", "");
   }
-  //... and adds the "active" class on the current step:
   x[n].className += " active";
 }
 var myCarousel = document.querySelector('#myCarousel')

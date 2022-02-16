@@ -18,26 +18,24 @@ class Posts extends CI_Controller {
     public function edit($id = false){
         if($id){
             if($this->input->method(TRUE) == "POST"){
-                if($this->uploadImgPosts()){   
+                if($this->uploadImgPosts()){
                     $filename = $this->uploadImgPosts();
-                    // var_dump($filename);die();
-                    $dataInsert['title'] = $this->input->post('title');
-                    $dataInsert['description'] = $this->input->post('description');
-                    $dataInsert['image'] = $filename['file']['file_name'];
-                    $dataInsert['createdAt'] = date('Y-m-d H:i:s');
-                    if($this->pm->updatePosts($id,$dataInsert)){
-                        redirect('backadmin/posts');
+                    if($filename['result'] != 'failed'){
+                        $dataInsert['image'] = $filename['file']['file_name'];
                     }
-                }else{
-                    $dataInsert['title'] = $this->input->post('title');
-                    $dataInsert['description'] = $this->input->post('description');
-                    $dataInsert['createdAt'] = date('Y-m-d H:i:s');
-                    if($this->pm->updatePosts($id,$dataInsert)){
-                        redirect('backadmin/posts');
-                    }
+                }
+                $dataInsert['title'] = $this->input->post('title');
+                $dataInsert['id_kategori'] = $this->input->post('kategori');
+                $dataInsert['description'] = $this->input->post('description');
+                $dataInsert['meta_keyword'] = $this->input->post('meta_keyword');
+                $dataInsert['meta_description'] = $this->input->post('meta_description');
+                $dataInsert['alt_img'] = $this->input->post('alt_img');
+                if($this->pm->updatePosts($id,$dataInsert)){
+                    redirect('backadmin/posts');
                 }
             }
             $data['view'] = 'back/posts/edit';
+            $data['kategori'] = $this->db->get('kategori')->result();
             $data['data'] = $this->pm->getPosts($id)->row();
 		    $this->load->view('back/layouts',$data);
             
@@ -50,25 +48,25 @@ class Posts extends CI_Controller {
             // var_dump($this->uploadImgPosts());die();
             if($this->uploadImgPosts()){
                 $filename = $this->uploadImgPosts();
-                $dataInsert['title'] = $this->input->post('title');
-                $dataInsert['description'] = $this->input->post('description');
-                $dataInsert['image'] = $filename['file']['file_name'];
-                $dataInsert['createdAt'] = date('Y-m-d H:i:s');
-                if($this->pm->insertPosts($dataInsert)){
-                    redirect('backadmin/posts');
-                }
-            }else{
-                $dataInsert['title'] = $this->input->post('title');
-                $dataInsert['description'] = $this->input->post('description');
-                // $dataInsert['image'] = $this->input->post('image');
-                $dataInsert['createdAt'] = date('Y-m-d H:i:s');
-                if($this->pm->insertPosts($dataInsert)){
-                    redirect('backadmin/posts');
+                if($filename['result'] != 'failed'){
+                    $dataInsert['image'] = $filename['file']['file_name'];
                 }
             }
+            $dataInsert['id_kategori'] = $this->input->post('kategori');
+            $dataInsert['title'] = $this->input->post('title');
+            $dataInsert['description'] = $this->input->post('description');
+            $dataInsert['meta_keyword'] = $this->input->post('meta_keyword');
+            $dataInsert['meta_description'] = $this->input->post('meta_description');
+            $dataInsert['alt_img'] = $this->input->post('alt_img');
+            $dataInsert['createdAt'] = date('Y-m-d H:i:s');
+            if($this->pm->insertPosts($dataInsert)){
+                redirect('backadmin/posts');
+            }
+            
         }
         $data['view'] = 'back/posts/tambah';
         // $data['data'] = $this->pm->getPosts($id)->row();
+        $data['kategori'] = $this->db->get('kategori')->result();
 		$this->load->view('back/layouts',$data);
     }
     public function hapus($id = false){

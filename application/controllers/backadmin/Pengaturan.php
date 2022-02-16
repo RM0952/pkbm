@@ -32,6 +32,7 @@ class Pengaturan extends CI_Controller {
             $dataUpdate['embed_lokasi'] = $this->input->post('embed_lokasi');
             $dataUpdate['meta_keyword'] = $this->input->post('meta_keyword');
             $dataUpdate['meta_description'] = $this->input->post('meta_description');
+            $dataUpdate['text_nav'] = $this->input->post('text_nav');
             if($this->km->updatePengaturan($dataUpdate)){
                 redirect('backadmin/pengaturan');
             }

@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | Simple Tables</title>
+  <title>ADMIN PKBM</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -13,6 +13,12 @@
   <link rel="stylesheet" href="<?php echo base_url() ?>assets/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
   <link rel="stylesheet" href="<?php echo base_url() ?>assets/plugins/toastr/toastr.min.css">
   <link rel="stylesheet" href="<?php echo base_url() ?>assets/dist/css/adminlte.min.css">
+  <style>
+    .input-color{
+      border-radius: 33px;
+      width: 30px;
+    }
+  </style>
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -37,7 +43,7 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="<?php echo base_url() ?>assets/index3.html" class="brand-link">
+    <a href="<?php echo base_url() ?>backadmin" class="brand-link">
       <span class="brand-text font-weight-light">PKBM</span>
     </a>
 
@@ -89,6 +95,37 @@
               </p>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="<?php echo base_url() ?>backadmin/jalur" class="nav-link">
+              <i class="nav-icon fas fa-list"></i>
+              <p>
+                Jalur Pendaftaran
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="<?php echo base_url() ?>backadmin/pengaturan" class="nav-link">
+              <i class="nav-icon fas fa-list"></i>
+              <p>
+                Pengaturan
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="<?php echo base_url() ?>backadmin/kategori" class="nav-link">
+              <i class="nav-icon fas fa-list"></i>
+              <p>
+                Kategori Posts
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="<?php echo base_url() ?>backadmin/login/logout" class="nav-link">
+              <p>
+                Logout
+              </p>
+            </a>
+          </li>
           
         </ul>
       </nav>
@@ -130,6 +167,7 @@
 
 <!-- jQuery -->
 <script src="<?php echo base_url() ?>assets/plugins/jquery/jquery.min.js"></script>
+<script src="<?php echo base_url() ?>assets/plugins/ckeditor/ckeditor.js"></script>
 <!-- Bootstrap 4 -->
 <script src="<?php echo base_url() ?>assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
@@ -156,12 +194,13 @@
   $('#closeSMK').click(function(){
     $('#formSMK').modal('hide')
   })
-  $('#addSMA').click(function(){
-    $('#formSMA').modal('show')
+  $('#addSMA ').click(function(){
+    $('#formSMA ').modal('show')
   })
-  $('#closeSMA').click(function(){
-    $('#formSMA').modal('hide')
+  $('#closeSMA ').click(function(){
+    $('#formSMA ').modal('hide')
   })
+  CKEDITOR.replace( 'description' );
 </script>
 </body>
 </html>

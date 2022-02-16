@@ -2,9 +2,15 @@
         <div class="row mt-4">
             <div class="col-md-3">
                 <div class="card">
-                        <div class="card-header" style="background-color : <?php echo $warnasd->row()->bg_color ?>; color:<?php echo $warnasd->row()->font_color ?>">
+                        <div id="bg-sd" class="card-header" style="background-color : <?php echo $warnasd->row()->bg_color ?>; color:<?php echo $warnasd->row()->font_color ?>">
                           <p class="mb-0">Pendaftaran Online Jenjang</p>
                           <h4>Jalur SD</h4>
+                          <form action="<?php echo base_url() ?>backadmin/jalur/editColor" method="post">
+                              <input type="hidden" name="jenjang" value="sd">
+                            <input type="color" class="input-color" name="bg_color" value="<?php echo $warnasd->row()->bg_color ?>" id="bg-color-sd" onchange="return backgroundWarnaSd(this.value)">
+                            <input type="color" class="input-color" name="font_color" value="<?php echo $warnasd->row()->font_color ?>" id="font-color-sd" onchange="return fontColorSd(this.value)">
+                            <button type="submit" class="btn btn-success btn-sm" id="save-sd">simpan</button>
+                          </form>
                         </div>
                     <div class="card-body p-1">
                         <ul class="list-group list-group-flush">
@@ -20,9 +26,15 @@
             </div>
             <div class="col-md-3">
                 <div class="card">
-                        <div class="card-header" style="background-color : <?php echo $warnasmp->row()->bg_color ?>; color:<?php echo $warnasmp->row()->font_color ?>">
+                        <div id="bg-smp" class="card-header" style="background-color : <?php echo $warnasmp->row()->bg_color ?>; color:<?php echo $warnasmp->row()->font_color ?>">
                           <p class="mb-0">Pendaftaran Online Jenjang</p>
                           <h4>Jalur SMP</h4>
+                          <form action="<?php echo base_url() ?>backadmin/jalur/editColor" method="post">
+                                <input type="hidden" name="jenjang" value="smp">
+                                <input type="color" class="input-color" name="bg_color" value="<?php echo $warnasmp->row()->bg_color ?>" id="bg-color-smp" onchange="return backgroundWarnaSmp(this.value)">
+                                <input type="color" class="input-color" name="font_color" value="<?php echo $warnasmp->row()->font_color ?>" id="font-color-smp" onchange="return fontColorSmp(this.value)">
+                                <button type="submit" class="btn btn-success btn-sm" id="save-sd">simpan</button>
+                          </form>
                         </div>
                     <div class="card-body p-1">
                         <ul class="list-group list-group-flush">
@@ -36,9 +48,15 @@
             </div>
             <div class="col-md-3">
                 <div class="card">
-                        <div class="card-header" style="background-color : <?php echo $warnasma->row()->bg_color ?>; color:<?php echo $warnasma->row()->font_color ?>">
-                          <p class="mb-0">Pendaftaran Online Jenjang</p>
-                          <h4>Jalur SMA</h4>
+                        <div id="bg-sma" class="card-header" style="background-color : <?php echo $warnasma->row()->bg_color ?>; color:<?php echo $warnasma->row()->font_color ?>">
+                            <p class="mb-0">Pendaftaran Online Jenjang</p>
+                            <h4>Jalur SMA</h4>
+                          <form action="<?php echo base_url() ?>backadmin/jalur/editColor" method="post">
+                                <input type="hidden" name="jenjang" value="sma">
+                            <input type="color" class="input-color" name="bg_color" value="<?php echo $warnasma->row()->bg_color ?>" id="bg-color-sma" onchange="return backgroundWarnaSma(this.value)">
+                            <input type="color" class="input-color" name="font_color" value="<?php echo $warnasma->row()->font_color ?>" id="font-color-sma" onchange="return fontColorSma(this.value)">
+                            <button type="submit" class="btn btn-success btn-sm" id="save-sd">simpan</button>
+                          </form>
                         </div>
                     <div class="card-body p-1">
                         <ul class="list-group list-group-flush">
@@ -52,9 +70,15 @@
             </div>
             <div class="col-md-3">
                 <div class="card">
-                        <div class="card-header" style="background-color : <?php echo $warnasmk->row()->bg_color ?>; color:<?php echo $warnasmk->row()->font_color ?>">
+                        <div id="bg-smk" class="card-header" style="background-color : <?php echo $warnasmk->row()->bg_color ?>; color:<?php echo $warnasmk->row()->font_color ?>">
                           <p class="mb-0">Pendaftaran Online Jenjang</p>
                           <h4>Jalur SMK</h4>
+                          <form action="<?php echo base_url() ?>backadmin/jalur/editColor" method="post">
+                                <input type="hidden" name="jenjang" value="smk">
+                            <input type="color" class="input-color" name="bg_color" value="<?php echo $warnasmk->row()->bg_color ?>" id="bg-color-smk" onchange="return backgroundWarnaSmk(this.value)">
+                            <input type="color" class="input-color" name="font_color" value="<?php echo $warnasmk->row()->font_color ?>" id="font-color-smk" onchange="return fontColorSmk(this.value)">
+                            <button type="submit" class="btn btn-success btn-sm" id="save-sd">simpan</button>
+                          </form>
                         </div>
                     <div class="card-body p-1">
                         <ul class="list-group list-group-flush">
@@ -160,3 +184,37 @@
             </div>
         </div>
     </div>
+    <script>
+        function backgroundWarnaSd(value){
+            return $('#bg-sd').css('background-color',value)
+            // return alert('tes')
+        }
+        function fontColorSd(value){
+            return $('#bg-sd').css('color',value)
+            // return alert('tes')
+        }
+        function backgroundWarnaSmp(value){
+            return $('#bg-smp').css('background-color',value)
+            // return alert('tes')
+        }
+        function fontColorSmp(value){
+            return $('#bg-smp').css('color',value)
+            // return alert('tes')
+        }
+        function backgroundWarnaSma(value){
+            return $('#bg-sma').css('background-color',value)
+            // return alert('tes')
+        }
+        function fontColorSma(value){
+            return $('#bg-sma').css('color',value)
+            // return alert('tes')
+        }
+        function backgroundWarnaSmk(value){
+            return $('#bg-smk').css('background-color',value)
+            // return alert('tes')
+        }
+        function fontColorSmk(value){
+            return $('#bg-smk').css('color',value)
+            // return alert('tes')
+        }
+    </script>

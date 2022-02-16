@@ -3,7 +3,8 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h1>Data Posts</h1>
+                        <h1>Posts</h1>
+                        <a href="<?php echo base_url() ?>backadmin/posts/tambah" class="btn btn-info btn-sm">Tambah Posts</a>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -22,8 +23,8 @@
                                     <tr>
                                         <td><?php echo $no++ ?></td>
                                         <td><?php echo $d->title ?></td>
-                                        <td><?php echo $d->description ?></td>
-                                        <td><img src="<?php echo base_url().'uploads/'.$d->image ?>" alt=""></td>
+                                        <td><?php echo word_limiter($d->description,20) ?></td>
+                                        <td><img class="w-100" src="<?php echo base_url().'uploads/'.$d->image ?>" alt=""></td>
                                         <td><a href="<?php echo base_url().'backadmin/posts/edit/'.$d->id_posts ?>">Edit</a></td>
                                         <td><a href="<?php echo base_url().'backadmin/posts/hapus/'.$d->id_posts ?>">Hapus</a></td>
                                     </tr>

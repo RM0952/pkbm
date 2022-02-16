@@ -12,16 +12,32 @@
             </div>
         </div>
         <div class="col-md-3">
-            <div class="card">
-                <div class="card-body">
-                    <p>tes</p>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header bg-kontak text-white">Info & Kontak</div>
+                        <div class="card-body">
+                            <ul>
+                                <?php foreach($kontak->result() as $r): ?>
+                                    <li><a href="#" style="text-decoration:none"><?= $r->tipe.' - '.$r->kontak ?></a></li>
+                                    <?php endforeach; ?>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header bg-kontak text-white">
+                            Peta Sekolah
+                        </div>
+                        <div class="card-body">
+                        <?php echo $embed_lokasi ?>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<footer class="py-3 my-0 bg-light">
-    <p class="text-center text-muted">&copy; 2022 KPT</p>
-</footer>
-</body>
-</html>

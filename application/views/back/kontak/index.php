@@ -3,7 +3,8 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h1>Data Pendaftar</h1>
+                        <h1>Data Kontak</h1>
+                        <a href="<?php echo base_url() ?>backadmin/kontak/tambah" class="btn btn-info btn-sm">Tambah Kontak</a>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">

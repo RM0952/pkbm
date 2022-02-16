@@ -43,7 +43,6 @@ class Slider extends CI_Controller {
     }
     public function tambah(){
         if($this->input->method(TRUE) == "POST"){
-            // var_dump($this->uploadImgSlider());die();
             if($this->uploadImgSlider()){
                 $filename = $this->uploadImgSlider();
                 $dataInsert['alt_img'] = $this->input->post('alt_img');
@@ -53,14 +52,12 @@ class Slider extends CI_Controller {
                 }
             }else{
                 $dataInsert['alt_img'] = $this->input->post('alt_img');
-                // $dataInsert['img_name'] = $this->input->post('img_name');
                 if($this->sm->insertSlider($dataInsert)){
                     redirect('backadmin/slider');
                 }
             }
         }
         $data['view'] = 'back/slider/tambah';
-        // $data['data'] = $this->sm->getSlider($id)->row();
 		$this->load->view('back/layouts',$data);
     }
     public function hapus($id = false){
@@ -74,7 +71,6 @@ class Slider extends CI_Controller {
     }
     public function uploadImgSlider(){
         $filename = 'pkbm_slider_'.time();
-        // var_dump($filename);
         $config['upload_path'] = './uploads/';
         $config['allowed_types'] = 'jpg|png|webp';
         $config['max_size']    = '2048';
@@ -83,7 +79,6 @@ class Slider extends CI_Controller {
         $this->load->library('upload', $config);
         $this->upload->initialize($config); 
         if ($this->upload->do_upload('img_name')) { 
-            // var_dump($this->upload->data());die();
             $return = array('result' => 'success', 'file' => $this->upload->data(), 'error' => '', 'filename' => $filename);
             return $return;
         } else {

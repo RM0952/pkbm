@@ -1,19 +1,18 @@
 
 <body>
-    <div class="row px-0 mx-0">
-        <div class="col-md-12 px-0">
-          <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-            <div class="row px-0 mx-0">
-              <div class="col-md-10 offset-1">
-                <div class="carousel-inner">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    
+  </div>
+    <div class="carousel-inner">
                   <?php $no =  1; foreach($slider->result() as $s): ?>
                   <div class="carousel-item <?php echo ($no == 1) ? 'active' : '' ?>">
-                    <img src="<?php echo base_url().'uploads/'.$s->img_name ?>" class="d-block w-100" alt="<?php echo $s->alt_img ?>">
+                    <img style="object-fit: cover;" src="<?php echo base_url().'assets/dist/img/banner-1.jpg'?>" class="d-block w-100" alt="<?php echo $s->alt_img ?>">
                   </div>
                   <?php $no++; endforeach; ?>
                 </div>
-              </div>
-            </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Previous</span>
@@ -23,9 +22,76 @@
               <span class="visually-hidden">Next</span>
             </button>
           </div>
-        </div>
+
+          <div class="px-4 pt-5 text-center border-bottom">
+    <h2 class="display-6 fw-bold">Pusat Kegiatan Belajar Masyarakat</h2>
+    <div class="col-lg-8 mx-auto">
+      <p class="lead mb-4">Pusat Kegiatan Belajar Masyarakat disingkat PKBM, adalah lembaga yang dibentuk oleh masyarakat untuk masyarakat yang bergerak dalam bidang pendidikan Non Formal. PKBM ini masih berada di bawah pengawasan dan bimbingan dari Dinas Pendidikan Nasional. Sebagai salah satu satuan pendidikan non formal, PKBM diharapkan dapat menjadi wadah bagi kegiatan masyarakat untuk lebih meningkatkan potensi diri dan keterampilan.</p>
     </div>
-    <div class="bg-light pt-5 pb-5" style="padding: 10px 0; box-shadow: 1px;">
+    <div class="overflow-hidden" style="max-height: 30vh;">
+      <div class="container px-5">
+        <img src="<?php echo base_url().'assets/dist/img/bg-pkbm-01.png'?>" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image" width="700" height="500" loading="lazy">
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+        <div class="p-3">
+						<div class="card card-sd text-center mx-1">	
+							<div class="card-body">
+								<h5>Pendaftaran Online Jenjang</h5>
+								<span> Jalur Sekolah Dasar (SD) </span>
+								<p class="card-text pt-3"><i class="i-testi fas fa-quote-left"></i> Makasih buat LSI GG udah kasih pulsa gratis <i class="i-testi fas fa-quote-left"></i></p>
+							</div>
+						</div>
+					</div>
+        </div>
+
+        <div class="col-md-6">
+        <div class="p-3">
+						<div class="card card-smp text-center mx-1">	
+							<div class="card-body">
+								<h5>Pendaftaran Online Jenjang</h5>
+								<span> Jalur Sekolah Menengah Pertama (SMP) </span>
+								<p class="card-text pt-3"><i class="i-testi fas fa-quote-left"></i> Makasih buat LSI GG udah kasih pulsa gratis <i class="i-testi fas fa-quote-left"></i></p>
+							</div>
+						</div>
+					</div>
+        </div>
+
+        <div class="col-md-6">
+        <div class="p-3">
+						<div class="card card-sma text-center mx-1">	
+							<div class="card-body">
+								<h5>Pendaftaran Online Jenjang</h5>
+								<span> Jalur Sekolah Menengah Atas (SMA) </span>
+								<p class="card-text pt-3"><i class="i-testi fas fa-quote-left"></i> Makasih buat LSI GG udah kasih pulsa gratis <i class="i-testi fas fa-quote-left"></i></p>
+							</div>
+						</div>
+					</div>
+        </div>
+
+        <div class="col-md-6">
+        <div class="p-3">
+						<div class="card card-smk text-center mx-1">	
+							<div class="card-body">
+								<h5>Pendaftaran Online Jenjang</h5>
+								<span> Jalur Sekolah Dasar (SD) </span>
+								<p class="card-text pt-3"><i class="i-testi fas fa-quote-left"></i> Makasih buat LSI GG udah kasih pulsa gratis <i class="i-testi fas fa-quote-left"></i></p>
+							</div>
+						</div>
+					</div>
+        </div>
+
+        
+      </div>
+    </div>
+  </section>
+
+    <div class="py-5" style="background-color: #F0F8FF;">
         <div class="container">
             <div class="row">
                 <div class="col-md-8">
@@ -217,7 +283,7 @@
         </div>
         <div class="row">
           <div class="col-md-9">
-          <iframe width="100%" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="<?php echo $embed_lokasi ?>"></iframe>
+          <?php echo $embed_lokasi ?>
           </div>
           <div class="col-md-3">
             <div class="card">
@@ -234,16 +300,21 @@
         </div>
       </div>
       <div class="bg-light py-5 mb-5">
-        <div class="container my-5 ">
-        <div class="row mx-0">
+        <div class="container">
+          <div class="row">
+            <h3>Postingan Terbaru</h3>
+          </div>
+        <div class="row mx-0 mt-3">
             <?php foreach($posts->result() as $p): ?>
             <div class="col-md-3 col-sm-12">
-                <div class="card" style="width: 18rem;">
-                  <img src="<?php echo base_url().'uploads/'.$p->image ?>" class="card-img-top" alt="...">
+                <div class="card">
+                  <img src="<?php echo base_url().'uploads/'.$p->image ?>" class="card-img-top" alt="<?php echo $p->alt_img ?>" width="100%" height="140">
                   <div class="card-body">
                     <h5 class="card-title"><?php echo $p->title ?></h5>
-                    <p class="card-text"><?php echo word_limiter($p->description,20); ?></p>
-                    <a href="<?php echo base_url().'home/detail_post/'.$p->id_posts ?>" class="btn btn-primary">Lihat Detail</a>
+                    <p>
+                      <?php echo word_limiter($p->description,19); ?>
+                      <a href="<?php echo base_url().'home/detail_post/'.$p->id_posts.'/'.str_replace(' ','-',strtolower($p->title)) ?>">Selengkapnya</a>
+                   </p>
                   </div>
               </div>
             </div>

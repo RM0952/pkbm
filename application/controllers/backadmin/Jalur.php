@@ -10,6 +10,17 @@ class Jalur extends CI_Controller {
             redirect('backadmin/login');
         }
     }
+    public function editColor(){
+        if($this->input->method(TRUE) == "POST"){
+            $update['bg_color'] = $this->input->post('bg_color');
+            $update['font_color'] = $this->input->post('font_color');
+            $this->db->where('tipe_jenjang',$this->input->post('jenjang'));
+            if($this->db->update('jalur_jenjang',$update)){
+                redirect('backadmin/jalur');
+            }
+        }
+
+    }
 	public function index(){
         $data['view'] = 'back/jalur/index';
         $data['sd'] = $this->jm->getJalur(false,'sd');

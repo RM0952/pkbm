@@ -9,11 +9,16 @@
                             <input type="text" name="title" class="form-control" value="<?php echo $pengaturan->title ?>">
                         </div>
                         <div class="form-group">
-                            <label for="embed_lokasi">Embed Lokasi</label>
-                            <input type="text" name="embed_lokasi" class="form-control" value="<?php echo $pengaturan->embed_lokasi ?>">
+                            <label for="text_nav">Teks Navbar</label>
+                            <input type="text" name="text_nav" class="form-control" value="<?php echo $pengaturan->text_nav ?>">
                         </div>
                         <div class="form-group">
-                            <label for="meta_keyword">Meta Keyword</label>
+                            <label for="embed_lokasi">Embed Lokasi <span style="font-weight: 400; color:red">*Rubah width menjadi 100%</span></label>
+                            <textarea name="embed_lokasi" id="embed_lokasi" class="form-control" cols="30" rows="10"><?php echo $pengaturan->embed_lokasi ?></textarea>
+                            <!-- <input type="text" name="embed_lokasi" class="form-control" value=""> -->
+                        </div>
+                        <div class="form-group">
+                            <label for="meta_keyword">Teks Navbar</label>
                             <input type="text" name="meta_keyword" class="form-control" value="<?php echo $pengaturan->meta_keyword ?>">
                         </div>
                         <div class="form-group">

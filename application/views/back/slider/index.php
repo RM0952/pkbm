@@ -3,7 +3,8 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h1>Data Posts</h1>
+                        <h1>Data Slider</h1>
+                        <a href="<?php echo base_url() ?>backadmin/slider/tambah" class="btn btn-info btn-sm">Tambah Slider</a>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">

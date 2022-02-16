@@ -4,6 +4,7 @@
                 <div class="card">
                     <div class="card-header">
                         <h1>Data Pendaftar</h1>
+                        <a href="<?php echo base_url() ?>backadmin/pendaftar/tambah" class="btn btn-info btn-sm">Tambah Pendaftar</a>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
